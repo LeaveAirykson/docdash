@@ -426,9 +426,9 @@ function buildMemberNav(items, itemHeading, itemsSeen, linktoFn) {
             }
 
             // new excluding logic via exclusion
-            // if (docdash.includeAllMembers && itemIsExcluded(member)) {
-            //     return;
-            // }
+            if (docdash.includeAllMembers && itemIsExcluded(method)) {
+              return;
+            }
 
             var navItem = '';
             var navItemLink = linkto(method.longname, method.name);
