@@ -391,9 +391,12 @@ function buildMemberNav(items, itemHeading, itemsSeen, linktoFn) {
             members.find(function (m) {
               return m.scope === 'static';
             })) ||
-          docdash.includeAllMembers
+          (docdash.includeAllMembers && members.length)
         ) {
           itemsNav += "<ul class='members'>";
+          if (docdash.showGroups) {
+            itemsNav += "<li data-type='title' class='group-title'>Members</li>";
+          }
 
           members.forEach(function (member) {
             //   keep legacy logic still working
@@ -418,6 +421,10 @@ function buildMemberNav(items, itemHeading, itemsSeen, linktoFn) {
 
         if (methods.length) {
           itemsNav += "<ul class='methods'>";
+
+          if (docdash.showGroups) {
+            itemsNav += "<li data-type='title' class='group-title'>Methods</li>";
+          }
 
           methods.forEach(function (method) {
             if (!docdash.includeAllMembers) {
