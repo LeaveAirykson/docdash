@@ -25,6 +25,9 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <?js if (env.conf.docdash.colorscheme) { ?>
+    <link type="text/css" rel="stylesheet" href="styles/schemes/<?js= env.conf.docdash.colorscheme ?>.css">
+    <?js } ?>
     <script src="scripts/nav.js" defer></script>
     <?js if (env.conf.docdash.commonNav) { ?>
     <script src="scripts/commonNav.js" defer></script>
