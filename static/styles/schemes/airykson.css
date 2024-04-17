@@ -134,6 +134,10 @@ table td {
   border-radius: inherit;
 }
 
+pre {
+  padding: 0;
+}
+
 .kwd,
 .tag {
   color: var(--primary-soft);
