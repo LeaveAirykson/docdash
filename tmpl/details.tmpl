@@ -15,7 +15,7 @@ if (data.defaultvalue && (data.defaultvaluetype === 'object' || data.defaultvalu
 ?>
 
 <dl class="details">
-    <?js if (data.description) {?>
+    <?js if (data.description && !data.hideDescription) {?>
     <dt class="tag-description">Description:</dt>
     <dd class="tag-description"><ul class="dummy"><li><?js= data.description ?></li></ul></dd>
     <?js } ?>
@@ -142,7 +142,8 @@ if (data.defaultvalue && (data.defaultvaluetype === 'object' || data.defaultvalu
 
 <?js
     var properties = data.properties;
-    if (properties && properties.length && properties.forEach) {
+    var showProperties = data.showProperties ?? true;
+    if (showProperties && properties && properties.length && properties.forEach) {
 ?>
 
     <h5 class="subsection-title">Properties:</h5>
